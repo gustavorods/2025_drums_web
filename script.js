@@ -36,6 +36,12 @@ function playComposition(songArray) {
     for(let songItem of songArray) {
         setTimeout(() => {
             playSound(`key${songItem}`);
+            /*
+            Whenever the user inputs an invalid key or presses the spacebar (which has the same effect), the system will ignore that input. 
+            However, in the user interface, this will create the impression that, when the user presses the spacebar to separate a set of keys, 
+            the system is indeed playing each set individually, with a noticeable delay between them. This happens because, when an invalid key is 
+            pressed, the system not only ignores the input but also applies a wait time.
+            */
         }, wait);
 
         wait += 250
