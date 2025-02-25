@@ -12,6 +12,16 @@ document.querySelector('.composer button').addEventListener('click', () => {
 
 })
 
+
+let elementsArray = document.querySelectorAll('.key');
+elementsArray.forEach(function(elem) {
+    elem.addEventListener('click', (event) => {
+        let key = `key${event.target.value}`.toLowerCase();
+        playSound(key);
+    })
+})
+
+
 function playSound(sound) {
     let audioElement = document.querySelector(`#s_${sound}`);
     let keyElement = document.querySelector(`div[data-key="${sound}"]`);
